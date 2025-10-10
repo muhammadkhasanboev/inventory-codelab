@@ -56,4 +56,7 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    //compose BOM - it prevents from version conflicts of libraries
+    implementation(platform("androidx.compose:compose-bom:2024.11.00"))
 }
