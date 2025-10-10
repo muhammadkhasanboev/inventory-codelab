@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp") version "2.0.21-1.0.25"
 }
 
 android {
@@ -56,4 +57,14 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    //compose BOM - it prevents from version conflicts of libraries
+    implementation(platform("androidx.compose:compose-bom:2024.11.00"))
+
+    //Room
+    implementation("androidx.room:room-runtime:2.8.2")
+    implementation("androidx.core:core-ktx:1.15.0")
+    ksp("androidx.room:room-compiler:2.8.2")
+    implementation("androidx.room:room-ktx:2.8.2")
+
 }
