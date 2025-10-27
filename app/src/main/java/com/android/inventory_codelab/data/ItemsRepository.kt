@@ -1,0 +1,15 @@
+package com.android.inventory_codelab.data
+
+import kotlinx.coroutines.flow.Flow
+
+interface ItemsRepository {
+    fun getAllItemsStream(): Flow<List<Item>>
+
+    fun getItemStream(): Flow<Item?>
+
+    suspend fun insertItem(item: Item)
+
+    suspend fun updateItem(item: Item)
+
+    suspend fun deleteItem(item: Item)
+}
